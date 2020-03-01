@@ -11,11 +11,14 @@ module JhallPalindrome
 
   # Returns content for palindrome testing.
   def processed_content
-    self.scan(/[a-z]/i).join.downcase
+    self.to_s.scan(/[a-z\d]/i).join.downcase
   end
 end
 
 class String
   include JhallPalindrome
+end
 
+class Integer
+  include JhallPalindrome
 end
